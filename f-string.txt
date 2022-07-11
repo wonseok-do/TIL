@@ -1,0 +1,65 @@
+1. f-string에 대해서 배워보자!
+    - 알고 있으면 엄청 예쁜 코드를 쓸 수 있는 f-string
+    
+    ```python
+    myname = '홍길동'
+    text = f'내 이름은 {myname}입니다.'
+    ```
+    
+2. datetime 함수에 대해서 배워보자!
+    - 더 많은 문법을 원한다면, 구글에 `python datetime 사용법` 이라고 치면 좌르륵!나옵니다
+    - 예를 들면 이런 곳! [(링크)](https://dojang.io/mod/page/view.php?id=2463)
+    - 날짜 시간을 다루는 함수!
+    
+    임포트하기
+    
+    ```python
+    from datetime import datetime
+    ```
+    
+    자주 쓰는 문법 - 1. 지금 날짜 시간 찍기
+    
+    ```python
+    now = datetime.now()
+    print(now)
+    ```
+    
+    자주 쓰는 문법 - 2. 날짜 시간을 원하는 형태로 변환하기
+    
+    ```python
+    date_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+    print(date_time)
+    ```
+파일 이름 변경, 저장
+1. 일단, 확장자를 빼내기
+    
+    ```python
+    extension = file.filename.split('.')[-1]
+    ```
+    
+2. 새로운 이름을 만들어주기
+    
+    ```python
+    today = datetime.now()
+    mytime = today.strftime('%Y-%m-%d-%H-%M-%S')
+    
+    filename = f'file-{mytime}'
+    ```
+    
+3. 새로운 이름으로 저장하기
+    
+    ```python
+    save_to = f'static/{filename}.{extension}'
+    file.save(save_to)
+    ```
+    
+4. 변경된 파일 이름을 db에도 저장하기
+    
+    ```python
+    doc = {
+        'title':title_receive,
+        'content':content_receive,
+        'file':f'{filename}.{extension}',
+    }
+    db.diary.insert_one(doc)
+    ```

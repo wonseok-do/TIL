@@ -1,0 +1,11 @@
+ServerSelectionTimeoutError
+pymongo가 디비에 연결을 실패해서 나는 에러가 발생
+sparta_plus 강의에서 나홀로메모장 -> index.html와 app.py을 받아 실행
+localhost:5000에 접속 후 html은 작동이 되지만 기사저장이 실행이 되지않는 오류 발생
+pycharm에 pymongo.errors.ServerSelectionTimeoutError라는 오류 발생
+localhost:27017 연결이 되어있지 않음
+bs4, requests만으로 mongodb가 연결되지 않아 certifi 다운받은 후 실행 -> 효과없음
+pymongo.errors.ServerSelectionTimeoutError을 계속해서 구글링을 해본 결과
+https://chunggaeguri.tistory.com/entry/Flask-%EB%AA%BD%EA%B3%A0DB-ServerSelectionTimeoutError-localhost27017WinError-10061
+mongodb가 설치되어 있지 않아서 발생한 오류 -> https://www.mongodb.com/try/download(mongodb설치) 
+설치 후 localhost:27017 연결 완료 -> 해결

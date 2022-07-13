@@ -1,0 +1,10 @@
+background-image설정
+background-image를 설정할 때 사진의 크기값이 브라우저 전체값이랑 달라서 비율에 맞게 꽉 차지 않는다
+그래서 pixabay.com홈페이지 이용해서 사진 크기값 1920*1280으로 다운받아서 사용해봤더니 사진이 브라우저에 꽉 차게 들어간다
+background-image : url("");
+background-size : cover;
+background-position : center center;
+background-repeat : no-repeat;
+width : 100vw;
+height : 100vh;
+이렇게 값을 주면 된다. 처음에는 width와 height 없이 넣었지만, 사진이 전체적으로 반영 되지 않아서 넣어주는게 좋다.

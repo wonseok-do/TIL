@@ -1,0 +1,13 @@
+background-image투명도
+투명도 방법에는 많은 방법들이 있지만, opacity을 사용해봤다
+opacity를 사용하면 배경화면 이미지뿐만 아니라 글씨가 있을 경우 글씨까지도 투명도가 바뀐다
+이미지만 투명도를 주는 방법에는 배경이미지를 가상요소에 넣어 활용하는 방법이 있다
+가상요소는 기존 원본에 다가 ::after or ::before 값을 넣어준다 ex) body {} -> body::after{} or body::before{}
+z-index를 활용
+원본과 가상요소에 position값을 각각 줘야한다
+원본에는 position : relative;
+가상요소에는 position : absolute;
+	     top : 0px; left : 0px; right : 0px; bottom : 0px;로 가상요소의 위치값을 0으로 맞춘다
+opacity값을 넣어 투명도를 결정하면 된다
+	     	
+

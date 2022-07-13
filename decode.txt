@@ -1,0 +1,10 @@
+AttributeError: 'str' object has no attribute 'decode' 에러
+sparta 웹개발plus 에서 '4-3 회원가입' 수업을 들을 때 회원가입 후 로그인을 하려고 하면 token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode' 이런 메시지가 뜨면서 로그인이 안된다.
+AttributeError: 'str' object has no attribute 'decode' 이 부분을 구글링한 결과
+token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+app.py 파일의 95분 줄 마지막에 .decode('utf-8')지우시면 됩니다. -> 해결완료!
+token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+AttributeError: 'str' object has no attribute 'decode' jwt decode Code Example (codegrepper.com)이
+(https://www.codegrepper.com/code-examples/python/frameworks/file-path-in-python/AttributeError%3A+%27str%27+object+has+no+attribute+%27decode%27+jwt+decode)
+웹사이트에 따르면 ('utf-8')이 이미 decode가 되어서 .decode('utf-8')이 필요가 없기 때문에 저 부분을 삭제하면 된다고 합니다.
